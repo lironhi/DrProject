@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>רשימת הבדיקות</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{%static 'fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" href="{%static 'vendor/nouislider/nouislider.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{%static 'assets/css/style.css' %}">
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="{%static 'images/form-img.jpg' %}" alt="">
+                </div>
+                <div class="signup-form">
+                    <form method="POST" class="register-form" id="register-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="searchid" class="required">מספר תז לחיפוס</label>
+                                    <input type="text" name="searchid" id="searchid" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" formaction="/DrProjectApp/home.html" value="חזור" class="submit" id="reset" name="back" />
+                            </div>
+                        </div>
+                        <div class="form-submit">
+
+                            <input type="submit" value="Txt" class="submit" id="submit" name="ok" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{%static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{%static 'vendor/nouislider/nouislider.min.js' %}"></script>
+    <script src="{%static 'vendor/wnumb/wNumb.js' %}"></script>
+    <script src="{%static 'vendor/jquery-validation/dist/jquery.validate.min.js' %}"></script>
+    <script src="{%static 'vendor/jquery-validation/dist/additional-methods.min.js' %}"></script>
+    <script src="{%static 'js/main.js' %}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

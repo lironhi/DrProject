@@ -1,0 +1,253 @@
+{% load static %} 
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DrProject - בדיקה חדשה</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{%static 'fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" href="{%static 'vendor/nouislider/nouislider.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{%static 'assets/css/style.css' %}">
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="{%static 'images/newanalyze-img.jpg' %}" alt="">
+                </div>
+                
+                <div class="signup-form">
+                    <form action="/DrProjectApp/txtcreator" method="POST" class="register-form" id="register-form">
+                        {% csrf_token %}
+                        <h1>מטופל חדש</h1>
+                        <div class="donate-us">
+                            <label></label>
+                        </div>
+                        <h1>שלב 1: נתונים פרטים של המטופל</h1>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="firstname" class="required">שם פרטי</label>
+                                    <input type="text" name="firstname" id="firstname" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="lastname" class="required">שם משפחה</label>
+                                    <input type="text" name="lastname" id="lastname" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="age" class="required">גיל</label>
+                                    <input type="text" name="age" id="age" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-select">
+                                    <div class="label-flex">
+                                        <label for="gender">מין</label>
+                                        <a href="#" class="form-link">לחישוב מדוייק יותר</a>
+                                    </div>
+                                    <div class="select-list">
+                                        <select name="gender" id="gender">
+                                            <option value="male">זכר</option>
+                                            <option value="female">נקבה</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-input">
+                                    <label for="idnum" class="required">מספר תעודת זהות</label>
+                                    <input type="text" name="idnum" id="idnum" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="donate-us">
+                            <label></label>
+                        </div>
+                        <h1>שלב 2: בדיקת דם</h1>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="wbc" class="required">White Blood Cells (WBC)</label>
+                                    <input type="text" name="wbc" id="wbc" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="neut" class="required">Neutrophil (Neut)</label>
+                                    <input type="text" name="neut" id="neut" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="lymph" class="required">Lymphocytes (Lymph)</label>
+                                    <input type="text" name="lymph" id="lymph" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="rbc" class="required">Red Blood Cells (RBC)</label>
+                                    <input type="text" name="rbc" id="rbc" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="hct" class="required">HCT</label>
+                                    <input type="text" name="hct" id="hct" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="urea" class="required">Urea</label>
+                                    <input type="text" name="urea" id="urea" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="hb" class="required">Hemoglobin</label>
+                                    <input type="text" name="hb" id="hb" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="creatin" class="required">Creatinine</label>
+                                    <input type="text" name="creatin" id="creatin" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="iron" class="required">Iron</label>
+                                    <input type="text" name="iron" id="iron" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="hdl" class="required">High Density Lipoprotein (HDL)</label>
+                                    <input type="text" name="hdl" id="hdl" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="alkaph" class="required">Alkaline Phosphatase</label>
+                                    <input type="text" name="alkaph" id="alkaph" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="donate-us">
+                            <label></label>
+                        </div>
+                        <h1>שלב 3: שאלות נוספות</h1>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-select">
+                                    <div class="label-flex">
+                                        <label for="smocker">? האם המטופל מעשן באופן קבוע</label>
+                                    </div>
+                                    <div class="select-list">
+                                        <select name="smocker" id="smocker">
+                                            <option>כן</option>
+                                            <option>לא</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-select">
+                                    <div class="label-flex">
+                                        <label for="fever">האם למטופל יש חום?</label>
+                                    </div>
+                                    <div class="select-list">
+                                        <select name="fever" id="fever">
+                                            <option>כן</option>
+                                            <option>לא</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-select">
+                                    <div class="label-flex">
+                                        <label for="vomiting">האם המטופל מקי?</label>
+                                    </div>
+                                    <div class="select-list">
+                                        <select name="vomiting" id="vomiting">
+                                            <option>כן</option>
+                                            <option>לא</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-select">
+                                    <div class="label-flex">
+                                        <label for="diarrhea">האם למטופל יש שילשול?</label>
+                                    </div>
+                                    <div class="select-list">
+                                        <select name="diarrhea" id="diarrhea">
+                                            <option>כן</option>
+                                            <option>לא</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                
+                                <div class="form-select">
+                                    <div class="label-flex">
+                                        <label for="medic">האם המטופל לוקח תרופות קבועות?</label>
+                                    </div>
+                                    <div class="select-list">
+                                        <select name="medic" id="medic">
+                                            <option>כן</option>
+                                            <option>לא</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-select">
+                                    <div class="label-flex">
+                                        <label for="diet">האם המטופל עושה דיאטה?</label>
+                                    </div>
+                                    <div class="select-list">
+                                        <select name="diet" id="diet">
+                                            <option>כן</option>
+                                            <option>לא</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-select">
+                                    <div class="label-flex">
+                                        <label for="sport">האם המטופל עושה ספורט באופן קבוע?</label>
+                                    </div>
+                                    <div class="select-list">
+                                        <select name="sport" id="sport">
+                                            <option>כן</option>
+                                            <option>לא</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-select">
+                                    <div class="label-flex">
+                                        <label for="pregnant">האם המטופל בהריון?</label>
+                                    </div>
+                                    <div class="select-list">
+                                        <select name="pregnant" id="pregnant">
+                                            <option>כן</option>
+                                            <option>לא</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-submit">
+                            <input type="submit" value="אישור" class="submit" id="submit" name="submit" />
+                            {% if messages %}
+                            {% for message in messages %}
+                              <h2 style="color:rgb(81, 209, 7);">{{message}}</h2>
+                            {% endfor %}
+                            {% endif %}
+                            <input type="submit" formaction="/DrProjectApp/home" value="חזור" class="submit" id="reset" name="reset" />
+                        </div>
+                    </form>
+                </div>
+            </div> <!-- End signUpContent -->
+            <div class="signup-img">
+                <img src="{%static 'images/logo-img.png' %}" alt="">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{%static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{%static 'vendor/nouislider/nouislider.min.js' %}"></script>
+    <script src="{%static 'vendor/wnumb/wNumb.js' %}"></script>
+    <script src="{%static 'vendor/jquery-validation/dist/jquery.validate.min.js' %}"></script>
+    <script src="{%static 'vendor/jquery-validation/dist/additional-methods.min.js' %}"></script>
+    <script src="{%static 'js/main.js' %}"></script>
+</body>
+</html>
